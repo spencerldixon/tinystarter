@@ -1,0 +1,13 @@
+<% content_for :body do %>
+  <body class="min-h-screen flex flex-col items-center justify-between text-base-content bg-gradient-to-r from-violet-600 to-violet-800">
+    <%= render "shared/flash" %>
+
+    <main class="p-6 border bg-white rounded-lg shadow-md">
+      <%= yield %>
+    </main>
+
+    <%= render "shared/footer" %>
+  </body>
+<% end %>
+
+<%= render template: "layouts/application" %>
