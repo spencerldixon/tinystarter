@@ -7,14 +7,15 @@ modules = %w(
   remove_trailing_slashes
   robots
   seeds
-  home_page
   legal_pages
   mission_control
   devise
   cancancan
+  flash
   layout
   pwa
   valid_email
+  active_link_to
 )
 
 # Execute each module

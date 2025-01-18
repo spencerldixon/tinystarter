@@ -16,8 +16,6 @@ inject_into_file "app/models/user.rb", before: "end" do
   eos
 end
 
-rails_command("g devise:views")
-
 devise_modules = ["lockable", "confirmable", "trackable"]
 
 lockable_text = <<-eos
@@ -60,11 +58,9 @@ end
 
 # Add authenticated root
 
-
 inject_into_file "config/routes.rb", after: /devise_for :users/, force: true do
   <<-eos
-  \n
-  devise_scope :user do
+  \ndevise_scope :user do
     unauthenticated do
       root to: "devise/sessions#new"
     end
@@ -72,11 +68,26 @@ inject_into_file "config/routes.rb", after: /devise_for :users/, force: true do
     authenticated do
       root to: "documents#index", as: :authenticated_root
     end
-  end
-  \n
+  end\n
   eos
 end
 
 # Copy over devise layouts
+directory File.join(File.expand_path("..", __dir__), "files/app/views/devise"), "app/views/devise"
 
-directory File.join(File.expand_path("..", __dir__), "files"), "app/views/devise/"
+# Alternatively, generate your own...
+# rails_command("g devise:views")
+
+# Add :authenticate_user! to application controller and permit :terms_and_conditions on sign up
+inject_into_file "app/controllers/application_controller.rb", before: /end/, force: true do
+  <<-eos
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_user!, unless: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:terms_and_conditions])
+  end
+  eos
+end

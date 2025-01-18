@@ -3,9 +3,9 @@ after_bundle do
 
   inject_into_file 'tailwind.config.js', after: "module.exports = {\n" do
     <<-eos
-plugins: [
-  require('daisyui')
-],
+  plugins: [
+    require('daisyui')
+  ],
     eos
   end
 

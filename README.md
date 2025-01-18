@@ -1,10 +1,10 @@
-# 🏁 Minimalist starter
+# 🏁 tinystarter
 
 A minimalist starting template for Rails 8+ applications.
 
 No options, just a nice omakase stack and design.
 
-You can edit the list in `tinystarter.rb` to remove any modules you don't want to install
+You can edit the list in `tinystarter.rb` to remove any modules you don't want to install.
 
 ## Use
 
@@ -18,10 +18,14 @@ rails new APP_NAME --css=tailwind --javascript=bun -m tinystarter/tinystarter.rb
 
 ## TODO
 
-- [ ] FlashController - stimulus
-- [ ] Devise layouts (from pm)
 - [ ] Devise registration page (controller needed for different layout)
-- [ ] Application Layouts (and responsive sidebar)
 - [ ] Mission control admin access (ability)
 - [ ] Solid queue
 - [ ] Mailer config
+- [ ] Captcha on registration
+- [ ] Kamal deploy GitHub action
+- [ ] Exception notification -> slack or telegram
+- [ ] Metatags (with sensible defaults)
+- [ ] Terms and privacy pages should be public
+- [ ] Improve responsiveness of sign up page
+
