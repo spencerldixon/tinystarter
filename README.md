@@ -14,18 +14,16 @@ Note you will need tailwind and bun, as tinystarter uses DaisyUI which builds on
 
 ```
 rails new APP_NAME --css=tailwind --javascript=bun -m tinystarter/tinystarter.rb
+cd APP_NAME && rails db:prepare
+./bin/dev
 ```
 
 ## TODO
 
-- [ ] Devise registration page (controller needed for different layout)
-- [ ] Mission control admin access (ability)
-- [ ] Solid queue
+- [ ] Solid queue in procfile
 - [ ] Mailer config
-- [ ] Captcha on registration
 - [ ] Kamal deploy GitHub action
 - [ ] Exception notification -> slack or telegram
 - [ ] Metatags (with sensible defaults)
-- [ ] Terms and privacy pages should be public
 - [ ] Improve responsiveness of sign up page
 

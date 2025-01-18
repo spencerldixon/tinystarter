@@ -66,7 +66,7 @@ inject_into_file "config/routes.rb", after: /devise_for :users/, force: true do
     end
 
     authenticated do
-      root to: "documents#index", as: :authenticated_root
+      root to: "dashboard#index", as: :authenticated_root
     end
   end\n
   eos
@@ -89,5 +89,18 @@ inject_into_file "app/controllers/application_controller.rb", before: /end/, for
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:terms_and_conditions])
   end
+  eos
+end
+
+append_to_file "config/initializers/devise.rb" do
+  <<-eos
+\n
+Rails.application.config.to_prepare do
+  Devise::SessionsController.layout "devise"
+  Devise::RegistrationsController.layout proc { |controller| user_signed_in? ? "application" : "devise" }
+  Devise::ConfirmationsController.layout "devise"
+  Devise::UnlocksController.layout "devise"
+  Devise::PasswordsController.layout "devise"
+end
   eos
 end

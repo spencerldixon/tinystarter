@@ -13,3 +13,13 @@ template File.join(File.expand_path("..", __dir__), "files/app/views/static_page
 template File.join(File.expand_path("..", __dir__), "files/app/views/static_pages/terms_and_conditions.html.erb"), 
   "app/views/static_pages/terms_and_conditions.html.erb", 
   force: true
+
+copy_file File.join(File.expand_path("..", __dir__), "files/app/views/layouts/blank.html.erb"), 
+  "app/views/layouts/blank.html.erb"
+
+inject_into_file "app/controllers/static_pages_controller.rb", after: "class StaticPagesController < ApplicationController" do
+  <<-eos
+  skip_before_action :authenticate_user!
+  layout "blank"
+  eos
+end

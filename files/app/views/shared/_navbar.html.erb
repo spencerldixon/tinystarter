@@ -1,32 +1,29 @@
-<div class="navbar bg-base-100">
-  <div class="flex-1">
+<div class="navbar bg-base-100 flex justify-between items-center">
+  <div class="">
+    <label for="my-drawer-2" class="btn btn-ghost btn-square drawer-button lg:hidden">
+      <i class="fa-solid fa-bars fa-2x text-primary/30"></i>
+    </label>
+  </div>
+
+  <div class="">
     <%= link_to root_path, class: "btn btn-ghost text-xl lg:hidden" do %>
       <i class="fa-solid fa-paperclip text-primary"></i> tinyapp
     <% end %>
   </div>
+
   <div class="flex-none gap-2">
-    <div class="form-control">
-      <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
-    </div>
     <div class="dropdown dropdown-end">
-      <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-        <div class="w-10 rounded-full">
-          <img
-            alt="Tailwind CSS Navbar component"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-        </div>
+      <div tabindex="0" role="button" class="btn btn btn-ghost btn-square">
+        <i class="fa-solid fa-gear fa-2x text-primary/30"></i>
       </div>
-      <ul
-        tabindex="0"
-        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+
+      <ul tabindex="0" class="menu menu dropdown-content bg-base-100 rounded-md z-[1] mt-3 w-52 p-2 shadow">
+        <li><%= link_to "My account", edit_user_registration_path %></li>
         <li>
-          <a class="justify-between">
-            Profile
-            <span class="badge">New</span>
-          </a>
+          <%= link_to destroy_user_session_path, method: :delete, data: { turbo_method: :delete } do %>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>Log out
+          <% end %>
         </li>
-        <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
       </ul>
     </div>
   </div>

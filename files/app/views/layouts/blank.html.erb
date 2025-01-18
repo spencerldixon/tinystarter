@@ -1,0 +1,17 @@
+<% content_for :body do %>
+  <body class="min-h-screen bg-base-100 text-base-content">
+    <%= render "shared/flash" %>
+
+    <div class="flex justify-center items-center">
+      <span class="p-6 text-xl font-semibold text-neutral-content">tinyapp</span>
+    </div>
+
+    <main class="p-6">
+      <%= yield %>
+    </main>
+
+    <%= render "shared/footer" %>
+  </body>
+<% end %>
+
+<%= render template: "layouts/application" %>

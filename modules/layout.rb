@@ -46,3 +46,7 @@ gsub_file "app/views/layouts/application.html.erb", regex do
   <% end %>
   eos
 end
+
+# Create a dashboard page
+
+rails_command "g controller dashboard index"
