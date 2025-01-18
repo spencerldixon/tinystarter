@@ -8,18 +8,21 @@ You can edit the list in `tinystarter.rb` to remove any modules you don't want t
 
 ## Use
 
-Clone the repo and reference the `tinystarter.rb` file with the `-m` arguement:
+Clone the repo and reference the `tinystarter.rb` file with the `-m` argument:
 
 Note you will need tailwind and bun, as tinystarter uses DaisyUI which builds on top of tailwind and cannot be installed via importmaps
 
 ```
-rails new APP_NAME --css=tailwind --javascript=bun -m tinystarter/tinystarter.rb
+rails new APP_NAME --css=tailwind --javascript=bun -m /tinystarter/tinystarter.rb
 cd APP_NAME && rails db:prepare
 ./bin/dev
 ```
 
 ## TODO
 
+- [ ] blank.html.erb layout for privacy and terms pages
+- [ ] page header partial
+- [ ] tests
 - [ ] Solid queue in procfile
 - [ ] Mailer config
 - [ ] Kamal deploy GitHub action

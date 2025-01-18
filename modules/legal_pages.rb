@@ -17,7 +17,7 @@ template File.join(File.expand_path("..", __dir__), "files/app/views/static_page
 copy_file File.join(File.expand_path("..", __dir__), "files/app/views/layouts/blank.html.erb"), 
   "app/views/layouts/blank.html.erb"
 
-inject_into_file "app/controllers/static_pages_controller.rb", after: "class StaticPagesController < ApplicationController" do
+inject_into_file "app/controllers/static_pages_controller.rb", after: "class StaticPagesController < ApplicationController\n" do
   <<-eos
   skip_before_action :authenticate_user!
   layout "blank"

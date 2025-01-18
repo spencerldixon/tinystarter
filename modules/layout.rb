@@ -32,10 +32,6 @@ gsub_file "app/views/layouts/application.html.erb", regex do
           <main class="p-6">
             <%= yield %>
           </main>
-
-          <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">
-            Open drawer
-          </label>
         </div>
         <div class="drawer-side sm:border-r border-primary/30">
           <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>

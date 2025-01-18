@@ -8,4 +8,6 @@ copy_file File.join(File.expand_path("..", __dir__), "files/app/helpers/flash_he
 copy_file File.join(File.expand_path("..", __dir__), "files/app/javascript/controllers/flash_controller.js"), 
   "app/javascript/controllers/flash_controller.js"
 
-rails_command "stimulus:manifest:update"
+after_bundle do
+  rails_command "stimulus:manifest:update"
+end
