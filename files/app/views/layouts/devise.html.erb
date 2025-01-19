@@ -1,14 +1,16 @@
 <% content_for :body do %>
-  <body class="min-h-screen flex flex-col items-center justify-between text-base-content bg-gradient-to-r from-violet-500 to-violet-900">
+  <body class="min-h-screen flex flex-col items-center justify-between text-base-content bg-gradient-to-r from-violet-500 to-violet-900 p-6">
     <%= render "shared/flash" %>
 
-    <span class="p-6 text-xl font-semibold text-neutral-content">tinyapp</span>
+    <%= link_to "tinyapp", root_path, class: "pb-6 text-xl font-semibold text-neutral-content" %>
 
     <main class="p-6 border bg-white rounded-lg shadow-md">
       <%= yield %>
     </main>
 
-    <%= render "shared/footer" %>
+    <div class="text-neutral-content">
+      <%= render "shared/footer" %>
+    </div>
   </body>
 <% end %>
 

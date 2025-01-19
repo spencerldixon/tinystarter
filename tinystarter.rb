@@ -16,6 +16,7 @@ modules = %w(
   pwa
   valid_email
   active_link_to
+  tailwind_typography
 )
 
 # Execute each module

@@ -1,12 +1,12 @@
 <% content_for :body do %>
-  <body class="min-h-screen bg-base-100 text-base-content">
+  <body class="min-h-screen flex flex-col bg-base-100 text-base-content container mx-auto max-w-screen-md p-6">
     <%= render "shared/flash" %>
 
     <div class="flex justify-center items-center">
-      <span class="p-6 text-xl font-semibold bg-base-100 text-base-content">tinyapp</span>
+      <%= link_to "tinyapp", root_path, class: "pb-6 text-xl font-semibold text-neutral-content" %>
     </div>
 
-    <main class="p-6">
+    <main class="py-6 flex-grow">
       <%= yield %>
     </main>
 

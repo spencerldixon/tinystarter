@@ -40,3 +40,11 @@ development:
 eos
 
 gsub_file "config/database.yml", from, to 
+
+# Start solid queue from the procfile
+
+after_bundle do
+  append_to_file "Procfile.dev" do
+    "jobs: bundle exec rake solid_queue:start"
+  end
+end

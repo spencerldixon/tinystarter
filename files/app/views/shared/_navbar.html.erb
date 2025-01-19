@@ -1,20 +1,20 @@
-<div class="navbar bg-base-100 flex justify-between items-center">
+<div class="navbar flex justify-between items-center">
   <div class="">
     <label for="my-drawer-2" class="btn btn-ghost btn-square drawer-button lg:hidden">
-      <i class="fa-solid fa-bars fa-2x text-primary/30"></i>
+      <i class="fa-solid fa-bars fa-2x"></i>
     </label>
   </div>
 
   <div class="">
     <%= link_to root_path, class: "btn btn-ghost text-xl lg:hidden" do %>
-      <i class="fa-solid fa-paperclip text-primary"></i> tinyapp
+      tinyapp
     <% end %>
   </div>
 
   <div class="flex-none gap-2">
     <div class="dropdown dropdown-end">
       <div tabindex="0" role="button" class="btn btn btn-ghost btn-square">
-        <i class="fa-solid fa-gear fa-2x text-primary/30"></i>
+        <i class="fa-solid fa-gear fa-2x"></i>
       </div>
 
       <ul tabindex="0" class="menu menu dropdown-content bg-base-100 rounded-md z-[1] mt-3 w-52 p-2 shadow">
