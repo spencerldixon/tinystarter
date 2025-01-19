@@ -7,6 +7,9 @@ copy_file File.join(File.expand_path("..", __dir__), "files/app/views/shared/_na
 copy_file File.join(File.expand_path("..", __dir__), "files/app/views/shared/_sidebar.html.erb"), 
   "app/views/shared/_sidebar.html.erb"
 
+copy_file File.join(File.expand_path("..", __dir__), "files/app/views/shared/_header.html.erb"), 
+  "app/views/shared/_header.html.erb"
+
 copy_file File.join(File.expand_path("..", __dir__), "files/app/views/layouts/devise.html.erb"), 
   "app/views/layouts/devise.html.erb"
 
@@ -33,7 +36,7 @@ gsub_file "app/views/layouts/application.html.erb", regex do
             <%= yield %>
           </main>
         </div>
-        <div class="drawer-side sm:border-r border-primary/30">
+        <div class="drawer-side sm:border-r">
           <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
           <%= render "shared/sidebar" %>
         </div>
@@ -46,3 +49,6 @@ end
 # Create a dashboard page
 
 rails_command "g controller dashboard index"
+
+copy_file File.join(File.expand_path("..", __dir__), "files/app/views/dashboard/index.html.erb"), 
+  "app/views/dashboard/index.html.erb", force: true

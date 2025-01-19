@@ -29,8 +29,8 @@ Here's a check list of things to do after creating an app with tinystarter:
 
 ## TODO
 
+- [ ] devise allow unconfirmed access
 - [ ] modal / onboarding
-- [ ] page header partial
 - [ ] tests
 - [ ] Mailer config
 - [ ] Kamal deploy GitHub action

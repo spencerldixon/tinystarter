@@ -17,6 +17,7 @@ modules = %w(
   valid_email
   active_link_to
   tailwind_typography
+  onboarding_modal
 )
 
 # Execute each module

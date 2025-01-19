@@ -1,0 +1,9 @@
+<%= render "shared/header", title: "Dashboard", subtitle: "Welcome #{current_user.email}!" %>
+
+<% if session[:onboarding] %>
+  <div data-controller="modal confetti" data-action="load@window->confetti#cannon load@window->modal#open" data-turbo-permanent>
+    <%= render "shared/modal" do %>
+      <%= turbo_frame_tag "onboarding", src: onboarding_path %>
+    <% end %>
+  </div>
+<% end %>

@@ -104,3 +104,7 @@ Rails.application.config.to_prepare do
 end
   eos
 end
+
+# Allow unconfirmed access
+
+uncomment_lines "config/initializers/devise.rb", "config.allow_unconfirmed_access_for = 2.days"
