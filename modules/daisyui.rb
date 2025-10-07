@@ -1,11 +1,9 @@
 after_bundle do
   run "bun install daisyui@latest"
 
-  inject_into_file 'tailwind.config.js', after: "module.exports = {\n" do
+  append_to_file 'app/assets/stylesheets/application.tailwind.css' do
     <<-eos
-  plugins: [
-    require('daisyui')
-  ],
+@plugin "daisyui";
     eos
   end
 
