@@ -29,9 +29,10 @@ Here's a check list of things to do after creating an app with tinystarter:
 
 ## TODO
 
+- [ ] Rspec / factorybot config
 - [ ] devise allow unconfirmed access
 - [ ] modal / onboarding
-- [ ] tests
+- [ ] Basic tests
 - [ ] Mailer config
 - [ ] Kamal deploy GitHub action
 - [ ] Exception notification -> slack or telegram

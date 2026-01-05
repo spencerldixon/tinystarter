@@ -3,9 +3,9 @@
 after_bundle do
   run "bun install @tailwindcss/typography"
 
-  inject_into_file 'tailwind.config.js', after: "plugins: [\n" do
+  inject_into_file 'app/assets/stylesheets/application.tailwind.css', after: "@import \"tailwindcss\";\n" do
     <<-eos
-    require('@tailwindcss/typography'),
+    @plugin '@tailwindcss/typography';
     eos
   end
 end
