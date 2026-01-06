@@ -18,6 +18,7 @@ modules = %w(
   active_link_to
   tailwind_typography
   onboarding_modal
+  license
 )
 
 # Execute each module
