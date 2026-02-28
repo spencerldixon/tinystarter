@@ -1,0 +1,19 @@
+%w[
+  devise
+  active_link_to
+  analytics
+  cancancan
+  flash
+  font_awesome
+  gitignore
+  layout
+  legal_pages
+  mission_control
+  onboarding_modal
+  rspec
+  license
+  seeds
+  remove_trailing_slashes
+  tailwind_typography
+  valid_email
+]

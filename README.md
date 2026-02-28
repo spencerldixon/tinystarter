@@ -9,7 +9,7 @@ Clone the repo and reference the `tinystarter.rb` file with the `-m` argument:
 Note you will need tailwind and bun, as tinystarter uses frontends which builds on top of tailwind and cannot be installed via importmaps
 
 ```
-rails new APP_NAME --css=tailwind --javascript=bun -m /tinystarter/tinystarter.rb
+rails new APP_NAME --css=tailwind --javascript=bun -m ~/Rails/tinystarter/tinystarter.rb
 cd APP_NAME && rails db:prepare
 ./bin/dev
 ```
@@ -49,16 +49,6 @@ Here's a check list of things to do after creating an app with tinystarter:
 | `seeds` | Creates a default admin user in db/seeds.rb for development |
 | `tailwind_typography` | Installs the Tailwind CSS Typography plugin for prose-styled content pages |
 | `valid_email` | Validates email format on the User model using the valid_email2 gem |
-
-## TODO
-
-- [x] Rspec / factorybot config
-- [ ] devise allow unconfirmed access
-- [ ] modal / onboarding
-- [ ] Basic tests
-- [ ] Mailer config
-- [ ] Exception notification -> slack or telegram
-- [ ] Metatags (with sensible defaults)
 
 ## Customising / Contributing
 
