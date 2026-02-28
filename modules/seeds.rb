@@ -1,3 +1,4 @@
+# description: Creates a default admin user in db/seeds.rb for development
 append_to_file 'db/seeds.rb' do
   <<-eos
 return if Rails.env.production?

@@ -1,3 +1,4 @@
+# description: Adds full authentication via Devise with lockable, confirmable, and trackable modules
 gem "devise"
 run "bundle install"
 rails_command("g devise:install")

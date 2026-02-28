@@ -1,4 +1,4 @@
-# Adds a modal partial and a pattern to open it after sign up with confetti to onboard a user
+# description: Adds a post-signup onboarding modal with confetti animation via Stimulus
 
 copy_file File.join(File.expand_path("..", __dir__), "files/app/views/shared/_modal.html.erb"), 
   "app/views/shared/_modal.html.erb"

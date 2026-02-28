@@ -1,3 +1,4 @@
+# description: Generates privacy policy and terms & conditions pages with a blank layout
 rails_command "g controller static_pages privacy terms_and_conditions"
 
 gsub_file "config/routes.rb", /get \"static_pages\/privacy\"\n/, ""

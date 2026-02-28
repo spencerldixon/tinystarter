@@ -1,0 +1,11 @@
+%w[
+  devise
+  cancancan
+  flash
+  legal_pages
+  license
+  seeds
+  gitignore
+  remove_trailing_slashes
+  analytics
+]

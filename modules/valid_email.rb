@@ -1,3 +1,4 @@
+# description: Validates email format on the User model using the valid_email2 gem
 gem "valid_email2"
 run "bundle install"
 

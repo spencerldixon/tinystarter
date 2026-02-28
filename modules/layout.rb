@@ -1,3 +1,4 @@
+# description: Adds navbar, sidebar, footer, and header partials with a dashboard controller
 copy_file File.join(File.expand_path("..", __dir__), "files/app/views/shared/_footer.html.erb"), 
   "app/views/shared/_footer.html.erb"
 

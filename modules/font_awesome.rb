@@ -1,3 +1,4 @@
+# description: Installs Font Awesome free icon set via Bun
 after_bundle do
   run "bun install @fortawesome/fontawesome-free"
 

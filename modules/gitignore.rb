@@ -1,3 +1,4 @@
+# description: Appends common entries to .gitignore (env files, DS_Store, credentials, DB dumps)
 append_to_file '.gitignore' do
   <<-eos
 .env

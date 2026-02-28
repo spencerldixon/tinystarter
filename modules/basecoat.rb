@@ -1,3 +1,4 @@
+# description: Installs Basecoat CSS component library built on top of Tailwind
 after_bundle do
   run "bun install basecoat-css@latest"
 

@@ -1,3 +1,4 @@
+# description: Installs DaisyUI component library and sets the default light theme
 after_bundle do
   run "bun install daisyui@latest"
 

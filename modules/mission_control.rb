@@ -1,3 +1,4 @@
+# description: Mounts Mission Control for job monitoring at /jobs, restricted to admin users
 gem "mission_control-jobs"
 
 inject_into_file 'config/application.rb', before: /^\s\send\nend/ do

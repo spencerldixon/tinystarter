@@ -1,3 +1,4 @@
+# description: Adds Rack middleware to 301 redirect URLs with trailing slashes
 
 gem 'rack-rewrite'
 

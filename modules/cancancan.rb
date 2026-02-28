@@ -1,3 +1,4 @@
+# description: Adds role-based authorisation via CanCanCan with an Ability class
 gem "cancancan"
 run "bundle install"
 rails_command("g cancan:ability")

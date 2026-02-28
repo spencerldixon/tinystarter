@@ -1,4 +1,4 @@
-# Installs the tailwind typography plugin, used on privacy and terms pages
+# description: Installs the Tailwind CSS Typography plugin for prose-styled content pages
 
 after_bundle do
   run "bun install @tailwindcss/typography"
