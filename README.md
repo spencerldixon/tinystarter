@@ -42,12 +42,15 @@ Here's a check list of things to do after creating an app with tinystarter:
 | `legal_pages` | Generates privacy policy and terms & conditions pages with a blank layout |
 | `license` | Adds the O'Saasy source-available licence as LICENSE.md |
 | `mission_control` | Mounts Mission Control for job monitoring at /jobs, restricted to admin users |
+| `solid_queue_postgres` | Configures Solid Queue to use a single PostgreSQL database with an inline migration |
 | `onboarding_modal` | Adds a post-signup onboarding modal with confetti animation via Stimulus |
 | `pwa` | Enables the Rails PWA manifest and service worker routes |
 | `remove_trailing_slashes` | Adds Rack middleware to 301 redirect URLs with trailing slashes |
 | `rspec` | Installs RSpec and FactoryBot for testing, with optional Devise test helpers |
 | `seeds` | Creates a default admin user in db/seeds.rb for development |
 | `tailwind_typography` | Installs the Tailwind CSS Typography plugin for prose-styled content pages |
+| `telegram_exceptions` | Forwards unhandled exceptions to a Telegram chat for real-time error alerts |
+| `telegram_notifications` | Adds a TelegramNotifier service for sending custom notifications to a Telegram chat |
 | `valid_email` | Validates email format on the User model using the valid_email2 gem |
 
 ## Customising / Contributing
@@ -58,6 +61,12 @@ You can create custom sets of modules to install. Put a ruby file with an array 
 
 ### Adding your own Modules
 
-Modules are a ruby file stored in `/modules` that use the thor templating language. They should start with a comment that starts with `# description: Description of your module` as the first line. This will be displayed during install.
+Modules are plain ruby files that automate the install of something in your rails app using the thor templating language.
 
-Don't forget to add your module to the `all_modules` list in `tinystarter.rb`
+Modules live in `/modules` and must begin with a comment to describe what the module does in the following format:
+
+```
+# description: Adds authentication
+```
+
+Add your module to the `ALL_MODULES` array in `tinystarter.rb` to add it to the options for installation.

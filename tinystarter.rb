@@ -50,6 +50,9 @@ ALL_MODULES = %w[
   pwa
   layout
   rspec
+  telegram_exceptions
+  telegram_notifications
+  solid_queue_postgres
 ]
 
 # Dynamically configure modules
