@@ -1,8 +1,9 @@
 # description: Adds flash message partial, helper, and auto-dismissing Stimulus controller
-copy_file File.join(File.expand_path("..", __dir__), "files/app/views/shared/_flash.html.erb"), 
+
+copy_file File.join(File.expand_path("..", __dir__), "files/themes/#{FRONTEND}/app/views/shared/_flash.html.erb"), 
   "app/views/shared/_flash.html.erb"
 
-copy_file File.join(File.expand_path("..", __dir__), "files/app/helpers/flash_helper.rb"), 
+copy_file File.join(File.expand_path("..", __dir__), "files/themes/#{FRONTEND}/app/helpers/flash_helper.rb"), 
   "app/helpers/flash_helper.rb"
 
 # Copy flash stimulus controller

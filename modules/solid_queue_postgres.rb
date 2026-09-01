@@ -1,11 +1,13 @@
 # description: Configures Solid Queue to use a single PostgreSQL database with an inline migration
 
-# Configure development environment
+# Remove any existing solid_queue config from development (handles Rails 8 default :queue setup)
+gsub_file "config/environments/development.rb",
+  /\n[^\n]*config\.active_job\.queue_adapter = :solid_queue\n[^\n]*config\.solid_queue\.connects_to = \{[^\n]+\}\n?/,
+  ""
+
+# Inject correct development config
 inject_into_file "config/environments/development.rb", after: "Rails.application.configure do" do
-  <<-RUBY
-  \nconfig.active_job.queue_adapter = :solid_queue
-  config.solid_queue.connects_to = { database: { writing: :primary } }
-  RUBY
+  "\n  config.active_job.queue_adapter = :solid_queue\n  config.solid_queue.connects_to = { database: { writing: :primary } }\n"
 end
 
 # Update production.rb to use primary instead of the default separate queue database
@@ -151,6 +153,4 @@ after_bundle do
       end
     end
   RUBY
-
-  append_to_file "Procfile.dev", "jobs: bundle exec rake solid_queue:start\n"
 end

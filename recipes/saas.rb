@@ -1,19 +1,22 @@
 %w[
-  devise
-  active_link_to
-  analytics
-  cancancan
-  flash
-  font_awesome
   gitignore
-  layout
-  legal_pages
-  mission_control
-  onboarding_modal
-  rspec
-  license
-  seeds
+  credentials
   remove_trailing_slashes
+  seeds
+  font_awesome
+  active_link_to
   tailwind_typography
+  flash
+  devise
+  devise_google_omniauth
+  mailer
+  cancancan
   valid_email
+  mission_control
+  analytics
+  layout
+  rspec
+  telegram_exceptions
+  telegram_notifications
+  solid_queue_postgres
 ]

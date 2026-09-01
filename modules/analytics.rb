@@ -1,5 +1,5 @@
-# description: Adds an analytics partial injected into the application layout head
-template File.join(File.expand_path("..", __dir__), "files/app/views/shared/_analytics.html.erb"), "app/views/shared/_analytics.html.erb", force: true
+# description: Creates an empty shared/analytics partial and adds it into the main application layout head
+create_file "app/views/shared/_analytics.html.erb"
 
 inject_into_file 'app/views/layouts/application.html.erb', :before => "</head>" do
   <<-eos

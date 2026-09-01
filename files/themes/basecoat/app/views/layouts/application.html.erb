@@ -1,0 +1,18 @@
+  <% if content_for?(:body) %>
+    <%= yield(:body) %>
+  <% else %>
+    <body>
+      <%= render "shared/flash" %>
+      <%= render "shared/sidebar" %>
+
+      <main id="content">
+        <%= render "shared/navbar" %>
+
+        <div class="p-4 md:p-6 xl:p-12">
+          <main class="mx-auto w-full max-w-screen-lg gap-10">
+            <%= yield %>
+          </main>
+        </div>
+      </main>
+    </body>
+  <% end %>

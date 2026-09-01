@@ -1,18 +1,20 @@
 # description: Adds navbar, sidebar, footer, and header partials with a dashboard controller
-copy_file File.join(File.expand_path("..", __dir__), "files/app/views/shared/_footer.html.erb"), 
-  "app/views/shared/_footer.html.erb"
 
-copy_file File.join(File.expand_path("..", __dir__), "files/app/views/shared/_navbar.html.erb"), 
-  "app/views/shared/_navbar.html.erb"
+# Copy views
 
-copy_file File.join(File.expand_path("..", __dir__), "files/app/views/shared/_sidebar.html.erb"), 
-  "app/views/shared/_sidebar.html.erb"
+views = %w[
+  shared/_footer
+  shared/_navbar
+  shared/_sidebar
+  shared/_header
+  layouts/devise
+]
 
-copy_file File.join(File.expand_path("..", __dir__), "files/app/views/shared/_header.html.erb"), 
-  "app/views/shared/_header.html.erb"
+views.each do |view|
+  copy_file File.join(File.expand_path("..", __dir__), "files/themes/#{FRONTEND}/app/views/#{view}.html.erb"), "app/views/#{view}.html.erb"
+end
 
-copy_file File.join(File.expand_path("..", __dir__), "files/app/views/layouts/devise.html.erb"), 
-  "app/views/layouts/devise.html.erb"
+# Replace main body content in application.html.erb
 
 regex = <<-eos
   <body>
@@ -21,35 +23,12 @@ regex = <<-eos
 eos
 
 gsub_file "app/views/layouts/application.html.erb", regex do
-  <<-eos
-  <% if content_for?(:body) %>
-    <%= yield(:body) %>
-  <% else %>
-    <body class="bg-base-100 text-base-content">
-      <%= render "shared/flash" %>
-
-      <div class="drawer lg:drawer-open">
-        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content">
-          <%= render "shared/navbar" %>
-
-          <main class="p-6">
-            <%= yield %>
-          </main>
-        </div>
-        <div class="drawer-side sm:border-r">
-          <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
-          <%= render "shared/sidebar" %>
-        </div>
-      </div>
-    </body>
-  <% end %>
-  eos
+  File.read(File.join(File.expand_path("..", __dir__), "files/themes/#{FRONTEND}/app/views/layouts/application.html.erb"))
 end
 
 # Create a dashboard page
 
 rails_command "g controller dashboard index"
 
-copy_file File.join(File.expand_path("..", __dir__), "files/app/views/dashboard/index.html.erb"), 
+copy_file File.join(File.expand_path("..", __dir__), "files/themes/#{FRONTEND}/app/views/dashboard/index.html.erb"), 
   "app/views/dashboard/index.html.erb", force: true

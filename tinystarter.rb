@@ -33,6 +33,7 @@ end
 # List of all modules to select from
 ALL_MODULES = %w[
   gitignore
+  credentials
   remove_trailing_slashes
   seeds
   font_awesome
@@ -40,8 +41,9 @@ ALL_MODULES = %w[
   tailwind_typography
   flash
   legal_pages
-  license
   devise
+  devise_google_omniauth
+  mailer
   cancancan
   valid_email
   onboarding_modal
@@ -53,6 +55,8 @@ ALL_MODULES = %w[
   telegram_exceptions
   telegram_notifications
   solid_queue_postgres
+  kamal_healthchecks
+  kamal_deploy
 ]
 
 # Dynamically configure modules

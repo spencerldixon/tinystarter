@@ -74,7 +74,7 @@ inject_into_file "config/routes.rb", after: /devise_for :users/, force: true do
 end
 
 # Copy over devise layouts
-directory File.join(File.expand_path("..", __dir__), "files/app/views/devise"), "app/views/devise"
+directory File.join(File.expand_path("..", __dir__), "files/themes/#{FRONTEND}/app/views/devise"), "app/views/devise"
 
 # Alternatively, generate your own...
 # rails_command("g devise:views")

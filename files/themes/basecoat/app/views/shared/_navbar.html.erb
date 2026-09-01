@@ -1,0 +1,31 @@
+<header class="bg-background sticky inset-x-0 top-0 isolate flex shrink-0 items-center gap-2 border-b z-10">
+  <div class="flex w-full justify-between items-center gap-2 py-2 px-4">
+
+    <button type="button" data-controller="sidebar" data-action="click->sidebar#toggle" aria-label="Toggle sidebar" class="btn-sm-icon-ghost size-7 -ml-1.5">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path></svg>
+    </button>
+
+    <div id="user-menu" class="dropdown-menu">
+      <button type="button"
+              id="user-menu-trigger"
+              aria-haspopup="menu"
+              aria-controls="user-menu-menu"
+              aria-expanded="false"
+              class="btn-ghost text-sm font-medium">
+        <%= current_user.email %>
+      </button>
+      <div id="user-menu-popover" data-popover aria-hidden="true" class="min-w-44" data-side="left" data-align="start">
+        <div role="menu" id="user-menu-menu" aria-labelledby="user-menu-trigger">
+          <%= link_to edit_user_registration_path, role: "menuitem", class: "cursor-pointer" do %>
+            Account settings
+          <% end %>
+          <hr role="separator" />
+          <%= button_to destroy_user_session_path, method: :delete, role: "menuitem", class: "cursor-pointer w-full text-left" do %>
+            Sign out
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>

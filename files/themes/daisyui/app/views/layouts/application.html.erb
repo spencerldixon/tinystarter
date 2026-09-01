@@ -1,0 +1,22 @@
+  <% if content_for?(:body) %>
+    <%= yield(:body) %>
+  <% else %>
+    <body class="bg-base-100 text-base-content">
+      <%= render "shared/flash" %>
+
+      <div class="drawer lg:drawer-open">
+        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content">
+          <%= render "shared/navbar" %>
+
+          <main class="p-6">
+            <%= yield %>
+          </main>
+        </div>
+        <div class="drawer-side sm:border-r">
+          <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
+          <%= render "shared/sidebar" %>
+        </div>
+      </div>
+    </body>
+  <% end %>
